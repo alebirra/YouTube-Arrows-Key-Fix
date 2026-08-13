@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube Arrow Keys Fix</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">YouTube controls</p>
+          <h1>Arrow Keys Fix</h1>
+        </div>
+        <span class="status-dot" title="Settings sync live"></span>
+      </header>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Playback</h2>
+          <span id="syncState">Synced</span>
+        </div>
+
+        <label class="slider-row" for="seekSeconds">
+          <span>Seek seconds</span>
+          <output id="seekSecondsValue" for="seekSeconds"></output>
+        </label>
+        <input id="seekSeconds" type="range" min="1" max="60" step="1">
+
+        <label class="slider-row" for="volumeStepPercent">
+          <span>Volume step</span>
+          <output id="volumeStepPercentValue" for="volumeStepPercent"></output>
+        </label>
+        <input id="volumeStepPercent" type="range" min="1" max="50" step="1">
+
+        <label class="toggle-row">
+          <span>
+            <strong>Shorts Up/Down volume</strong>
+            <small>Off keeps native Shorts navigation.</small>
+          </span>
+          <input id="shortsVolumeOverride" type="checkbox">
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Keybinds</h2>
+          <span id="conflictState"></span>
+        </div>
+
+        <div class="keybind-grid" id="keybindGrid"></div>
+      </section>
+
+      <footer class="footer-actions">
+        <button class="ghost-button" id="resetDefaults" type="button">Reset to defaults</button>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

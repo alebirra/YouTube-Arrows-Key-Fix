@@ -1,11 +1,29 @@
 {
   "manifest_version": 3,
   "name": "YouTube Arrow Keys Fix",
-  "version": "1.0.0",
-  "description": "Forces YouTube arrow keys to seek with left/right and change volume with up/down.",
+  "version": "1.1.0",
+  "description": "Customizable YouTube keyboard controls for seek and volume, including Shorts-aware behavior.",
   "icons": {
     "128": "icons/icon-128.png"
   },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "YouTube Arrow Keys Fix",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "page-bridge.js"
+      ],
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://youtube.com/*"
+      ]
+    }
+  ],
   "content_scripts": [
     {
       "matches": [
